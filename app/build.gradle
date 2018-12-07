@@ -4,7 +4,7 @@ android {
     compileSdkVersion = 28
 
     defaultConfig {
-        applicationId = "eu.faircode.netguard"
+        applicationId = "com.simpletool.datasaving"
         versionName = "2.218"
         minSdkVersion 22
         targetSdkVersion 28

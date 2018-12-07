@@ -21,7 +21,7 @@
 -keepattributes SourceFile,LineNumberTable
 
 #NetGuard
--keepnames class eu.faircode.netguard.** { *; }
+-keepnames class com.simpletool.datasaving.** { *; }
 
 #JNI
 -keepclasseswithmembernames class * {
@@ -29,18 +29,18 @@
 }
 
 #JNI callbacks
--keep class eu.faircode.netguard.Allowed { *; }
--keep class eu.faircode.netguard.Packet { *; }
--keep class eu.faircode.netguard.ResourceRecord { *; }
--keep class eu.faircode.netguard.Usage { *; }
--keep class eu.faircode.netguard.ServiceSinkhole {
+-keep class com.simpletool.datasaving.Allowed { *; }
+-keep class com.simpletool.datasaving.Packet { *; }
+-keep class com.simpletool.datasaving.ResourceRecord { *; }
+-keep class com.simpletool.datasaving.Usage { *; }
+-keep class com.simpletool.datasaving.ServiceSinkhole {
     void nativeExit(java.lang.String);
     void nativeError(int, java.lang.String);
-    void logPacket(eu.faircode.netguard.Packet);
-    void dnsResolved(eu.faircode.netguard.ResourceRecord);
+    void logPacket(com.simpletool.datasaving.Packet);
+    void dnsResolved(com.simpletool.datasaving.ResourceRecord);
     boolean isDomainBlocked(java.lang.String);
-    eu.faircode.netguard.Allowed isAddressAllowed(eu.faircode.netguard.Packet);
-    void accountUsage(eu.faircode.netguard.Usage);
+    com.simpletool.datasaving.Allowed isAddressAllowed(com.simpletool.datasaving.Packet);
+    void accountUsage(com.simpletool.datasaving.Usage);
 }
 
 #AndroidX
