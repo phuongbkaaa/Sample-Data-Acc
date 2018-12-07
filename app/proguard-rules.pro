@@ -21,7 +21,7 @@
 -keepattributes SourceFile,LineNumberTable
 
 #NetGuard
--keepnames class eu.faircode.netguard.** { *; }
+-keepnames class com.appian.datafilter.** { *; }
 
 #JNI
 -keepclasseswithmembernames class * {
@@ -29,18 +29,18 @@
 }
 
 #JNI callbacks
--keep class eu.faircode.netguard.Allowed { *; }
--keep class eu.faircode.netguard.Packet { *; }
--keep class eu.faircode.netguard.ResourceRecord { *; }
--keep class eu.faircode.netguard.Usage { *; }
--keep class eu.faircode.netguard.ServiceSinkhole {
+-keep class com.appian.datafilter.Allowed { *; }
+-keep class com.appian.datafilter.Packet { *; }
+-keep class com.appian.datafilter.ResourceRecord { *; }
+-keep class com.appian.datafilter.Usage { *; }
+-keep class com.appian.datafilter.ServiceSinkhole {
     void nativeExit(java.lang.String);
     void nativeError(int, java.lang.String);
-    void logPacket(eu.faircode.netguard.Packet);
-    void dnsResolved(eu.faircode.netguard.ResourceRecord);
+    void logPacket(com.appian.datafilter.Packet);
+    void dnsResolved(com.appian.datafilter.ResourceRecord);
     boolean isDomainBlocked(java.lang.String);
-    eu.faircode.netguard.Allowed isAddressAllowed(eu.faircode.netguard.Packet);
-    void accountUsage(eu.faircode.netguard.Usage);
+    com.appian.datafilter.Allowed isAddressAllowed(com.appian.datafilter.Packet);
+    void accountUsage(com.appian.datafilter.Usage);
 }
 
 #AndroidX

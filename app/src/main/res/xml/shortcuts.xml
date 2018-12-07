@@ -8,8 +8,8 @@
         android:shortcutShortLabel="@string/menu_settings">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="eu.faircode.netguard.ActivitySettings"
-            android:targetPackage="eu.faircode.netguard" />
+            android:targetClass="com.appian.datafilter.ActivitySettings"
+            android:targetPackage="com.appian.datafilter" />
         <categories android:name="android.shortcut.settings" />
     </shortcut>
     <shortcut
@@ -21,8 +21,8 @@
         android:shortcutShortLabel="@string/menu_log">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="eu.faircode.netguard.ActivityLog"
-            android:targetPackage="eu.faircode.netguard" />
+            android:targetClass="com.appian.datafilter.ActivityLog"
+            android:targetPackage="com.appian.datafilter" />
         <categories android:name="android.shortcut.log" />
     </shortcut>
 </shortcuts>

@@ -10,10 +10,10 @@
 
     <wifi
         blocked="false"
-        package="eu.faircode.netguard" />
+        package="com.appian.datafilter" />
     <other
         blocked="false"
-        package="eu.faircode.netguard"
+        package="com.appian.datafilter"
         roaming="false" />
 
     <wifi

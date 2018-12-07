@@ -4,7 +4,7 @@ android {
     compileSdkVersion = 28
 
     defaultConfig {
-        applicationId = "eu.faircode.netguard"
+        applicationId = "com.appian.datafilter"
         versionName = "2.217"
         minSdkVersion 22
         targetSdkVersion 28
