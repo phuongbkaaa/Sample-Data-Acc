@@ -1,20 +1,20 @@
 package com.simpletool.datasaving;
 
 /*
-    This file is part of NetGuard.
+    This file is part of Mobile Internet Manager.
 
-    NetGuard is free software: you can redistribute it and/or modify
+    Mobile Internet Manager is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    NetGuard is distributed in the hope that it will be useful,
+    Mobile Internet Manager is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with NetGuard.  If not, see <http://www.gnu.org/licenses/>.
+    along with Mobile Internet Manager.  If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2015-2018 by Marcel Bokhorst (M66B)
 */
@@ -29,6 +29,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.net.Uri;
 import android.net.VpnService;
 import android.os.AsyncTask;
@@ -56,6 +57,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,7 +76,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.simpletool.datasaving.R;
 
 public class ActivityMain extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
-    private static final String TAG = "NetGuard.Main";
+    private static final String TAG = "Mobile Internet Manager.Main";
 
     private boolean running = false;
     private ImageView ivIcon;
@@ -323,7 +325,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
         // Hint usage
         final LinearLayout llUsage = findViewById(R.id.llUsage);
-        Button btnUsage = findViewById(R.id.btnUsage);
+        RelativeLayout btnUsage = (RelativeLayout) findViewById(R.id.btnUsage);
         boolean hintUsage = prefs.getBoolean("hint_usage", true);
         llUsage.setVisibility(hintUsage ? View.VISIBLE : View.GONE);
         btnUsage.setOnClickListener(new View.OnClickListener() {
@@ -410,8 +412,8 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
                         if (!IAB.isPurchased(ActivityPro.SKU_LOG, ActivityMain.this))
                             prefs.edit().putBoolean("log", false).apply();
                         if (!IAB.isPurchased(ActivityPro.SKU_THEME, ActivityMain.this)) {
-                            if (!"teal".equals(prefs.getString("theme", "teal")))
-                                prefs.edit().putString("theme", "teal").apply();
+                            if (!"green".equals(prefs.getString("theme", "green")))
+                                prefs.edit().putString("theme", "green").apply();
                         }
                         if (!IAB.isPurchased(ActivityPro.SKU_NOTIFY, ActivityMain.this))
                             prefs.edit().putBoolean("install", false).apply();
@@ -773,16 +775,16 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
         }
 
         markPro(menu.findItem(R.id.menu_log), ActivityPro.SKU_LOG);
-        if (!IAB.isPurchasedAny(this))
-            markPro(menu.findItem(R.id.menu_pro), null);
+/*        if (!IAB.isPurchasedAny(this))
+            markPro(menu.findItem(R.id.menu_pro), null);*/
 
         if (!Util.hasValidFingerprint(this) || getIntentInvite(this).resolveActivity(pm) == null)
             menu.removeItem(R.id.menu_invite);
 
-        if (getIntentSupport().resolveActivity(getPackageManager()) == null)
-            menu.removeItem(R.id.menu_support);
+/*        if (getIntentSupport().resolveActivity(getPackageManager()) == null)
+            menu.removeItem(R.id.menu_support);*/
 
-        menu.findItem(R.id.menu_apps).setEnabled(getIntentApps(this).resolveActivity(pm) != null);
+/*        menu.findItem(R.id.menu_apps).setEnabled(getIntentApps(this).resolveActivity(pm) != null);*/
 
         return true;
     }
@@ -879,9 +881,11 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
                 startActivity(new Intent(this, ActivitySettings.class));
                 return true;
 
+/*
             case R.id.menu_pro:
                 startActivity(new Intent(ActivityMain.this, ActivityPro.class));
                 return true;
+*/
 
             case R.id.menu_invite:
                 startActivityForResult(getIntentInvite(this), REQUEST_INVITE);
@@ -891,17 +895,19 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
                 menu_legend();
                 return true;
 
-            case R.id.menu_support:
+/*            case R.id.menu_support:
                 startActivity(getIntentSupport());
-                return true;
+                return true;*/
 
             case R.id.menu_about:
                 menu_about();
                 return true;
 
+/*
             case R.id.menu_apps:
                 menu_apps();
                 return true;
+*/
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -914,7 +920,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
         // Hint white listing
         final LinearLayout llWhitelist = findViewById(R.id.llWhitelist);
-        Button btnWhitelist = findViewById(R.id.btnWhitelist);
+        RelativeLayout btnWhitelist = findViewById(R.id.btnWhitelist);
         boolean whitelist_wifi = prefs.getBoolean("whitelist_wifi", false);
         boolean whitelist_other = prefs.getBoolean("whitelist_other", false);
         boolean hintWhitelist = prefs.getBoolean("hint_whitelist", true);
@@ -929,7 +935,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
         // Hint push messages
         final LinearLayout llPush = findViewById(R.id.llPush);
-        Button btnPush = findViewById(R.id.btnPush);
+        RelativeLayout btnPush = findViewById(R.id.btnPush);
         boolean hintPush = prefs.getBoolean("hint_push", true);
         llPush.setVisibility(hintPush && !hintUsage ? View.VISIBLE : View.GONE);
         btnPush.setOnClickListener(new View.OnClickListener() {
@@ -942,7 +948,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
         // Hint system applications
         final LinearLayout llSystem = findViewById(R.id.llSystem);
-        Button btnSystem = findViewById(R.id.btnSystem);
+        ImageView btnSystem = findViewById(R.id.btnSystem);
         boolean system = prefs.getBoolean("manage_system", false);
         boolean hintSystem = prefs.getBoolean("hint_system", true);
         llSystem.setVisibility(!system && hintSystem ? View.VISIBLE : View.GONE);
@@ -1267,7 +1273,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
     private static Intent getIntentSupport() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("https://github.com/M66B/NetGuard/blob/master/FAQ.md"));
+        intent.setData(Uri.parse("https://github.com/M66B/Mobile Internet Manager/blob/master/FAQ.md"));
         return intent;
     }
 

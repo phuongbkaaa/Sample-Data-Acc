@@ -1,20 +1,20 @@
 package com.simpletool.datasaving;
 
 /*
-    This file is part of NetGuard.
+    This file is part of Mobile Internet Manager.
 
-    NetGuard is free software: you can redistribute it and/or modify
+    Mobile Internet Manager is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    NetGuard is distributed in the hope that it will be useful,
+    Mobile Internet Manager is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with NetGuard.  If not, see <http://www.gnu.org/licenses/>.
+    along with Mobile Internet Manager.  If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2015-2018 by Marcel Bokhorst (M66B)
 */
@@ -45,7 +45,7 @@ import androidx.core.app.NavUtils;
 import com.simpletool.datasaving.R;
 
 public class ActivityPro extends AppCompatActivity {
-    private static final String TAG = "NetGuard.Pro";
+    private static final String TAG = "Mobile Internet Manager.Pro";
 
     private IAB iab;
 
@@ -290,7 +290,7 @@ public class ActivityPro extends AppCompatActivity {
 
         String android_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         String challenge = (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ? Build.SERIAL : "O3" + android_id);
-        String seed = (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ? "NetGuard2" : "NetGuard3");
+        String seed = (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ? "Mobile Internet Manager2" : "Mobile Internet Manager3");
 
         // Challenge
         TextView tvChallenge = view.findViewById(R.id.tvChallenge);

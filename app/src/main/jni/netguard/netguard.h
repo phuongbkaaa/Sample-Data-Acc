@@ -33,7 +33,7 @@
 #include <android/log.h>
 #include <sys/system_properties.h>
 
-#define TAG "NetGuard.JNI"
+#define TAG "Mobile Internet Manager.JNI"
 
 // #define PROFILE_JNI 5
 

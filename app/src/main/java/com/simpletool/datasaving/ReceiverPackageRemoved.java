@@ -1,20 +1,20 @@
 package com.simpletool.datasaving;
 
 /*
-    This file is part of NetGuard.
+    This file is part of Mobile Internet Manager.
 
-    NetGuard is free software: you can redistribute it and/or modify
+    Mobile Internet Manager is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    NetGuard is distributed in the hope that it will be useful,
+    Mobile Internet Manager is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with NetGuard.  If not, see <http://www.gnu.org/licenses/>.
+    along with Mobile Internet Manager.  If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2015-2018 by Marcel Bokhorst (M66B)
 */
@@ -27,7 +27,7 @@ import android.util.Log;
 import androidx.core.app.NotificationManagerCompat;
 
 public class ReceiverPackageRemoved extends BroadcastReceiver {
-    private static final String TAG = "NetGuard.Receiver";
+    private static final String TAG = "Mobile Internet Manager.Receiver";
 
     @Override
     public void onReceive(final Context context, Intent intent) {

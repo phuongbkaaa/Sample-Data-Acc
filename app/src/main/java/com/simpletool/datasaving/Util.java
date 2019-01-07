@@ -1,20 +1,20 @@
 package com.simpletool.datasaving;
 
 /*
-    This file is part of NetGuard.
+    This file is part of Mobile Internet Manager.
 
-    NetGuard is free software: you can redistribute it and/or modify
+    Mobile Internet Manager is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    NetGuard is distributed in the hope that it will be useful,
+    Mobile Internet Manager is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with NetGuard.  If not, see <http://www.gnu.org/licenses/>.
+    along with Mobile Internet Manager.  If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2015-2018 by Marcel Bokhorst (M66B)
 */
@@ -87,7 +87,7 @@ import androidx.core.net.ConnectivityManagerCompat;
 import com.simpletool.datasaving.R;
 
 public class Util {
-    private static final String TAG = "NetGuard.Util";
+    private static final String TAG = "Mobile Internet Manager.Util";
 
     // Roam like at home
     private static final List<String> listEU = Arrays.asList(
@@ -474,7 +474,7 @@ public class Util {
     public static void setTheme(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         boolean dark = prefs.getBoolean("dark_theme", false);
-        String theme = prefs.getString("theme", "teal");
+        String theme = prefs.getString("theme", "green");
         if (theme.equals("teal"))
             context.setTheme(dark ? R.style.AppThemeTealDark : R.style.AppThemeTeal);
         else if (theme.equals("blue"))
@@ -807,7 +807,7 @@ public class Util {
 
                 // Get version info
                 String version = getSelfVersionName(context);
-                sb.append(String.format("NetGuard: %s/%d\r\n", version, getSelfVersionCode(context)));
+                sb.append(String.format("Mobile Internet Manager: %s/%d\r\n", version, getSelfVersionCode(context)));
                 sb.append(String.format("Android: %s (SDK %d)\r\n", Build.VERSION.RELEASE, Build.VERSION.SDK_INT));
                 sb.append("\r\n");
 
@@ -904,7 +904,7 @@ public class Util {
                 Intent sendEmail = new Intent(Intent.ACTION_SEND);
                 sendEmail.setType("message/rfc822");
                 sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{""});
-                sendEmail.putExtra(Intent.EXTRA_SUBJECT, "NetGuard " + version + " logcat");
+                sendEmail.putExtra(Intent.EXTRA_SUBJECT, "Mobile Internet Manager " + version + " logcat");
                 sendEmail.putExtra(Intent.EXTRA_TEXT, sb.toString());
                 sendEmail.putExtra(Intent.EXTRA_STREAM, uri);
                 return sendEmail;

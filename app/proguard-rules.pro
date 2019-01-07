@@ -20,7 +20,7 @@
 -renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable
 
-#NetGuard
+#Mobile Internet Manager
 -keepnames class com.simpletool.datasaving.** { *; }
 
 #JNI

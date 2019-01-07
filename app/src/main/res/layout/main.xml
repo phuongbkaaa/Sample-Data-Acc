@@ -43,15 +43,22 @@
                 android:text="@string/msg_usage"
                 android:textAppearance="@style/TextSmall" />
 
-            <Button
+            <RelativeLayout
                 android:id="@+id/btnUsage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:text="@android:string/ok"
-                android:textAppearance="@style/TextSmall" />
+                android:background="@drawable/rounded_rectangle">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@android:string/ok"
+                    android:layout_centerInParent="true"
+                    android:textColor="#fff"
+                    android:textAppearance="@style/TextSmall"/>
+            </RelativeLayout>
         </LinearLayout>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -138,15 +145,22 @@
                 android:text="@string/msg_system"
                 android:textAppearance="@style/TextSmall" />
 
-            <Button
+            <RelativeLayout
                 android:id="@+id/btnSystem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:text="@android:string/ok"
-                android:textAppearance="@style/TextSmall" />
+                android:background="@drawable/rounded_rectangle">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@android:string/ok"
+                    android:layout_centerInParent="true"
+                    android:textColor="#fff"
+                    android:textAppearance="@style/TextSmall"/>
+            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout

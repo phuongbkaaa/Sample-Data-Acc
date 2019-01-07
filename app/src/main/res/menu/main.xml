@@ -58,8 +58,8 @@
         android:id="@+id/menu_settings"
         android:title="@string/menu_settings"/>
     <item
-        android:id="@+id/menu_pro"
-        android:title="@string/title_pro"/>
+        android:id="@+id/donate"
+        android:title="@string/donate"/>
     <item
         android:id="@+id/menu_invite"
         android:title="@string/menu_invite"/>
@@ -67,12 +67,7 @@
         android:id="@+id/menu_legend"
         android:title="@string/menu_legend"/>
     <item
-        android:id="@+id/menu_support"
-        android:title="@string/menu_support"/>
-    <item
         android:id="@+id/menu_about"
         android:title="@string/menu_about"/>
-    <item
-        android:id="@+id/menu_apps"
-        android:title="@string/menu_apps"/>
+
 </menu>

@@ -9,7 +9,7 @@ android {
         minSdkVersion 22
         targetSdkVersion 28
         versionCode = 2018120701
-        archivesBaseName = "NetGuard-v$versionName"
+        archivesBaseName = "Mobile Internet Manager-v$versionName"
 
         externalNativeBuild {
             cmake {
